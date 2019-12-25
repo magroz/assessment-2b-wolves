@@ -1,0 +1,24 @@
+<h1>Edit party</h1>
+<script src="/js/put.js" defer></script>
+{{#if errors}}
+    <span>Something went wrong:</span>
+    <ul class="error-list pad-b-2">
+        {{#each errors as |error|}}
+            <li class="error-item">{{error}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+<div>
+    <label for="title-input" class="block mar-b-1">Title:</label>
+    <input id="title-input" name="title" type="text" value="{{party.title}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2" required>
+
+    <label for="body-input" class="block mar-b-1">Location:</label>
+    <input id="body-input" name="body" type="text" value="{{party.body}}" tabindex="2" class="block w-100 no-outline no-border pad-1 mar-b-2" required>
+
+    <label for="startsAt-input" class="block mar-b-1">Starts at:</label>
+    <input id="startsAt-input" name="startsAt" type="datetime-local" value="{{startsAtFormatHTML5}}" tabindex="3" class="block w-100 no-outline no-border pad-1 mar-b-2" required>
+    
+    <button id="{{ party.id }}" tabindex="4" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline btn-update">Отправить</button>
+</div>
+

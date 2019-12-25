@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Potluck Party</title>
+</head>
+<body>
+<header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+    <div class="max-w-700 center wrap-float">
+        <nav class="clearfix mar-b-1">
+            <ul class="no-bullets no-margin no-padding right">
+
+                {{#if isAuth}}
+                    <li class="pipe-separate t-light-green left"><a style="color: #06734e;"
+                                                                    href="/parties/author">{{userName}}</a></li>
+                    <li class="pipe-separate t-light-green left"><a style="color: #06734e;" href="/logout">LOGOUT</a>
+                    </li>
+                {{else}}
+                    <li class="pipe-separate t-light-green left"><a style="color: #06734e;" href="/parties/signup">REGISTER</a>
+                    <li class="pipe-separate t-light-green left"><a style="color: #06734e;"
+                        href="/parties/login">LOGIN</a></li>
+                    </li>
+                {{/if}}
+
+                <li class="pipe-separate t-light-green left"><a style="color: #06734e;" href="/">HOME</a></li>
+            </ul>
+        </nav>
+
+        <div class="logo-container">
+<!--            <img class="logo" src="/images/logo.png" class="center block">-->
+            <h1>Potluck Party</h1>
+        </div>
+    </div>
+</header>
+<div class="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
+    <div class="max-w-700 center">
+        {{{body}}}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+    </div>
+</div>
+</body>
+</html>

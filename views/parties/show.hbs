@@ -1,0 +1,21 @@
+<h1>{{party.title}}</h1>
+
+<!--<span class="party-date block font-3-4 c-lt-gray">Written on long_form_date(party.createdAt)</span>-->
+<span class="party-date block font-3-4 c-lt-gray">Create on {{party.createdAt}} by
+    <a href="/users/{{party._id}}/parties?author={{party.author}}"> {{party.author}}</a>
+</span>
+<p>{{party.body}}</p>
+<p>{{party.startsAt}}</p>
+
+{{#if isAuthor}}
+    <ul class="article no-bullets no-padding mar-t-2">
+        <li class="pipe-separate left">
+            <a href="/parties/{{ party.id }}/edit" class="c-white">edit</a>
+        </li>
+
+        <li class="pipe-separate left">
+            <button class="btn-delete no-border no-outline no-bg c-white hover-underline" id="{{ party.id }}">delete</button>
+        </li>
+    </ul>
+{{/if}}
+<script src="/js/delete.js" defer></script>

@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Sign up</h2>
+    <div class="card m-3 p-4">
+        {{#if message}}
+            <p style="color: red;">{{this.message}}</p>
+        {{/if}}
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label>Email:</label>
+                <input class="border form-control" type="text" name="email" required/>
+            </div>
+            <div class="form-group">
+                <label>Username:</label>
+                <input class="border form-control" type="text" name="username" required/>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input class="border form-control" type="password" name="password" required/>
+            </div>
+            <div>
+                <input class="btn btn-success" type="submit" value="Sign Up"/>
+            </div>
+        </form>
+    </div>
+</div>
